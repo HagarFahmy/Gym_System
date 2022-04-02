@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gym_member', function (Blueprint $table) {
+        Schema::create('gym_members', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('user');
+            $table->foreignId('user_id')->constrained('users');
             $table->enum('gender', ['female', 'male']);
             $table->date('data_of_birth');
             $table->dateTime('email_verified_at')->nullable();

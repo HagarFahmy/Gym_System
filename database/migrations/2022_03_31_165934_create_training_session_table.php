@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('training_session', function (Blueprint $table) {
+        Schema::create('training_sessions', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
             $table->dateTime('starts_at')->nullable();

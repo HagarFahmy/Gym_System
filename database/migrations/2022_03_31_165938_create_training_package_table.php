@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('training_package', function (Blueprint $table) {
+        Schema::create('training_packages', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50)->unique();
             $table->double('price');
-            $table->unsignedInteger('session_number');
+            $table->unsignedInteger('sessions_number');
             $table->timestamp('created_at')->useCurrent();
             $table->softDeletes();
         });

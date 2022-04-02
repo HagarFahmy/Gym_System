@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('coach_training_session', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('coach_id')->constrained('coach');
-            $table->foreignId('training_session_id')->constrained('training_session');
+            $table->foreignId('coach_id')->constrained('coaches');
+            $table->foreignId('training_session_id')->constrained('training_sessions');
             $table->timestamp('created_at')->useCurrent();
             $table->softDeletes();
         });

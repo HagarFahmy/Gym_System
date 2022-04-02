@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('coach', function (Blueprint $table) {
+        Schema::create('coaches', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
             $table->unsignedBigInteger('gym_id');
-            $table->foreign('gym_id')->references('id')->on('gym');
+            $table->foreign('gym_id')->references('id')->on('gyms');
             $table->softDeletes();
         });
     }

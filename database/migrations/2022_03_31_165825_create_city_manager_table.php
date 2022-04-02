@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('city_manager', function (Blueprint $table) {
+        Schema::create('city_managers', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('user');
+            $table->foreignId('user_id')->constrained('users');
             // $table->unsignedBigInteger('user_id');
             // $table->foreign('user_id')->references('id')->on('city');
-            $table->foreignId('city_id')->constrained('city');
+            $table->foreignId('city_id')->constrained('cities');
             $table->softDeletes();
         });
     }

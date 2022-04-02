@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('package_puchase', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('gym_id')->constrained('gym');
-            $table->foreignId('gym_member_id')->constrained('gym_member');
+            $table->foreignId('gym_id')->constrained('gyms');
+            $table->foreignId('gym_member_id')->constrained('gym_members');
+            $table->foreignId('package_id')->constrained('training_packages');
             $table->double('amount_paid');
             $table->timestamp('created_at')->useCurrent();
             $table->softDeletes();

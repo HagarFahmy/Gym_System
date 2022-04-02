@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('gym_manager', function (Blueprint $table) {
+        Schema::create('gym_managers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedTinyInteger('ban')->default(0);
             $table->dateTime('banned_at')->nullable();
             $table->softDeletes();

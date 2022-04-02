@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('gym_member_training_session', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('gym_member_id')->constrained('gym_member');
-            $table->foreignId('training_session_id')->constrained('training_session');
+            $table->foreignId('gym_member_id')->constrained('gym_members');
+            $table->foreignId('training_session_id')->constrained('training_sessions');
             $table->softDeletes();
         });
     }
