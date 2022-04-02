@@ -17,7 +17,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            
             $table->unsignedTinyInteger('ban')->default(0);
+            
+            $table->unsignedBigInteger('gym_id')->nullable();
+            $table->foreign('gym_id')->references('id')->on('gyms')->onDelete('cascade');
+      
             $table->dateTime('banned_at')->nullable();
             $table->softDeletes();
         });

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('coaches', function (Blueprint $table) {
             $table->id();
             $table->string('name', 50);
+            
             $table->unsignedBigInteger('gym_id');
             $table->foreign('gym_id')->references('id')->on('gyms');
             $table->softDeletes();

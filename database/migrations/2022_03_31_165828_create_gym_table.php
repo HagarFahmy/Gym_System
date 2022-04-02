@@ -17,10 +17,13 @@ return new class extends Migration
             $table->id();
             $table->string('cover_image', 50);
             $table->string('name', 50)->unique();
+
             $table->unsignedBigInteger('city_id');
             $table->foreign('city_id')->references('id')->on('cities');
+
             $table->unsignedBigInteger('city_manager_id');
             $table->foreign('city_manager_id')->references('user_id')->on('city_managers');
+            
             $table->timestamp('created_at')->useCurrent();
             $table->softDeletes();
         });

@@ -26,6 +26,8 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
+            // $table->timestamp('banned_at')->nullable();
+
         });
     }
 

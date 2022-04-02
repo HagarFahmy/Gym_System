@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('name', 50);
             $table->dateTime('starts_at')->nullable();
             $table->dateTime('finishes_at')->nullable();
+            
+            $table->unsignedBigInteger('gym_id');
+            $table->foreign('gym_id')->references('id')->on('gyms')->onDelete('cascade');
+       
             $table->timestamp('created_at')->useCurrent();
             $table->softDeletes();
         });

@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('gym_members', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
+
+            $table->foreignId('gym_id')->constrained('gyms');
+
             $table->enum('gender', ['female', 'male']);
             $table->date('data_of_birth');
             $table->dateTime('email_verified_at')->nullable();
